@@ -1,16 +1,15 @@
 {
-    "name": "glitch-discord-bot",
-    "version": "0.0.0",
-    "description": "discord bot sample on Glitch",
-    "main": "main.js",
-    "dependencies": {
-      "discord.js": "latest",
-      "express": "^4.17.1"
-    },
-    "devDependencies": {},
-    "scripts": {
-      "start": "node main.js",
-      "test": "node main.js"
-    }
+  "name": "glitch-discord-bot",
+  "version": "0.0.0",
+  "description": "discord bot sample on Glitch",
+  "main": "main.js",
+  "dependencies": {
+    "discord.js": "^12.3.1",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "node main.js",
+    "test": "node main.js"
   }
-  
+}
