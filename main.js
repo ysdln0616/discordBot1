@@ -11,23 +11,11 @@ client.on('ready', message =>{
 });
 
 client.on('voiceStateUpdate', (oldGuildMember, newGuildMember) =>{
-  if(oldGuildMember.channelID !== undefined &&oldGuildMember.channelID !== null && newGuildMember.channelID !== undefined){
-    if(oldGuildMember.channelID == "745072327766704249") {
-      sendMsg(mainChannelId, "<@" + newGuildMember.member.id +"> が <#745072327766704249> を抜けました！\n");
-    }else if(oldGuildMember.channelID == "745055397328453667"){
-      sendMsg(mainChannelId, "<@" + newGuildMember.member.id +"> が <#745055397328453667> を抜けました！\n");
+  if (oldGuildMember.channel === null && newGuildMember.channel !== null) {
+    sendMsg(mainChannelId, "<@" + newGuildMember.member.id +"> が <#" + newGuildMember.channel.id + "> で通話を開始しました！");
+  } else if (oldGuildMember.channel !== null && newGuildMember.channel === null) {
+    sendMsg(mainChannelId, "<@" + oldGuildMember.member.id +"> が <#" + oldGuildMember.channel.id + "> を抜けました！");
     }
-  }
-  if(oldGuildMember.channelID === undefined ||oldGuildMember.channelID === null|| oldGuildMember.channelID === "745055397328453667"&& newGuildMember.channelID !== undefined){
-    if(newGuildMember.channelID == "745072327766704249") {
-        sendMsg(mainChannelId, "<@" + newGuildMember.member.id +"> が <#745072327766704249> で通話を開始しました！\n");
-      }
-  }
-  if(oldGuildMember.channelID === undefined ||oldGuildMember.channelID === null|| oldGuildMember.channelID === "745072327766704249"&& newGuildMember.channelID !== undefined){
-    if(newGuildMember.channelID == "745055397328453667") {
-      sendMsg(mainChannelId, "<@" + newGuildMember.member.id +"> が <#745055397328453667> で通話を開始しました！\n");
-    }
-  };
 });
 
 
